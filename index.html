@@ -7,11 +7,27 @@
 	<script src="https://cdn.jsdelivr.net/npm/vue@2.5.15/dist/vue.js"></script>
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 
-	<title>{{title}}</title>
+	<title>Vue Video | The Client App</title>
 </head>
 <body>
 	<main id="app">
-		
+		<h4 class="welcome-message">{{mainmessage}}</h4>
+		<ul>
+			<li v-for="vid in videodata">
+				<h3>{{vid.name}}</h3>
+				<a :href="vid.vidsource" v-on:click="loadMovie"><img :src="'images/' +vid.thumb" alt="movie"></a>
+				<!-- you have to state what part is the string part(static) of the source -->
+				<p>CLick on the Poster to view the video</p>
+				<!-- <p>{{vid.description}}</p> -->
+				
+				
+			</li>
+		</ul>
+		<section>
+			<h3 class="movie-title">{{videoTitle}}</h3>
+			<p class="movie-details">{{videoDescription}}</p>
+			<video :src="'videos/' + videoSource" type="video/mp4" controls>
+		</section>
 	</main>
 	
 	<script src="js/main.js"></script>
