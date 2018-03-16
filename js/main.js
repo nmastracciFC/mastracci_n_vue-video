@@ -21,15 +21,22 @@ const vm = new Vue({
 			vidsource: "avengers.mp4",
 			description: "Black widow forever!"
 		}
-		]
+		],
+		videoTitle: "The title",
+		videoDescription: "Description of a movie",
+		videoSource: ''
 		
 	},
 	methods: {
 		loadMovie(e) {
 			e.preventDefault();
-			// working inside an object so do not use equals
-			var dataKey = e.currentTarget.href.substring(e.currentTarget.href.lastIndexOf('/')+1);
-			currentData: this.videodata.filter(video => video.vidsource === dataKey);
+			dataKey = e.currentTarget.href.substring(e.currentTarget.href.lastIndexOf('/')+1);
+			currentData = this.videodata.filter((video) => video.vidsource === dataKey);
+			//currentData[0].name = Star Wars the force awakens (when you click on that movie)
+			this.videoTitle = currentData[0].name;//the 0 takes away the array wrapping
+			this.videoDescription = currentData[0].description;
+			this.videoSource = dataKey;
+			console.log(this.videoSource);
 		}
 	}
 });

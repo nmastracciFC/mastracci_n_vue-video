@@ -17,11 +17,20 @@
 				<h3>{{vid.name}}</h3>
 				<a :href="vid.vidsource" v-on:click="loadMovie"><img :src="'images/' +vid.thumb" alt="movie"></a>
 				<!-- you have to state what part is the string part(static) of the source -->
-				<video></video>
-				<p>{{vid.description}}</p>
+				<p>CLick on the Poster to view the video</p>
+				<!-- <p>{{vid.description}}</p> -->
+				
 				
 			</li>
 		</ul>
+		<section>
+			<h3 class="movie-title">{{videoTitle}}</h3>
+			<p class="movie-details">{{videoDescription}}</p>
+			<video width="320" height="240" controls autoplay="true">
+			  <source :src="'videos/' + videoSource" type="video/mp4">
+			  Your browser does not support the video tag.
+			</video>
+		</section>
 	</main>
 	
 	<script src="js/main.js"></script>
