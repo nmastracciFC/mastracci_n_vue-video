@@ -7,17 +7,11 @@
 	<script src="https://cdn.jsdelivr.net/npm/vue@2.5.15/dist/vue.js"></script>
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 
-	<title>VUE js</title>
+	<title>{{title}}</title>
 </head>
 <body>
 	<main id="app">
-		<h3>{{welcomemessage}}</h3>
-		<ul>
-			<li v-for="fruit in deliciousFruit">
-				<p v-on:click="logClicked">{{fruit.name}} is {{fruit.flavour}}</p>
-			</li>
-		</ul>
-		<p v-if="hasVue">{{vuemessage}}</p>
+		
 	</main>
 	
 	<script src="js/main.js"></script>
