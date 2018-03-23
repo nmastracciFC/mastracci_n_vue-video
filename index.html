@@ -23,11 +23,18 @@
 				
 			</li>
 		</ul>
-		<section>
+		<section class="hidden-movies"  :class="{'show-movie' : showDetails}" >
 			<h3 class="movie-title">{{videoTitle}}</h3>
-			<p class="movie-details">{{videoDescription}}</p>
-			<video :src="'videos/' + videoSource" type="video/mp4" controls>
+			<div class="movie-details" >
+				<p class="movie-details">{{videoDescription}}</p>
+			</div>
+			<video :src="'videos/' + videoSource" type="video/mp4" controls autoplay>
 		</section>
+
+		<div class="up-arrow">
+			<span v-on:click="scrollBackUp" :class="{'show-scroller' : showDetails}" >^</span>
+		</div>
+
 	</main>
 	
 	<script src="js/main.js"></script>
